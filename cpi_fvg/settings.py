@@ -12,7 +12,26 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 
 import os
 
-from .secrets import SECRET_KEY
+from .secrets import *
+
+
+"""
+example secrets.py file:
+
+DB_NAME="........"
+DB_USERNAME="........"
+DB_PWD="........"
+DB_HOSTNAME="....."
+
+SECRET_KEY = "................................"
+
+MEDIA_ROOT = '/...."
+
+SMTP_SERVER = ""
+SMTP_USER = ""
+SMTP_PASSWORD = ""
+EMAIL_SENDER = "email address of sender"
+"""
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
