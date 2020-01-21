@@ -1,8 +1,11 @@
+from ckeditor.widgets import CKEditorWidget
 from django.contrib import admin
 from django.forms import (
     CheckboxSelectMultiple,
     TextInput
 )
+# from ckeditor.fields import RichTextField
+# from django import forms
 
 from .models import *
 
@@ -13,9 +16,17 @@ admin.site.register(FileItem)
 admin.site.register(MapZone)
 
 
+# class AreaAdminForm(forms.ModelForm):
+#     content = forms.CharField(widget=CKEditorWidget())
+#     class Meta:
+#         model = Area
+#         fields = '__all__'
+
+
 @admin.register(Area)
 class AreaAdmin(admin.ModelAdmin,):
     list_display = ('id', 'title', )
+    # form = AreaAdminForm
 
     def add_default_areas(self, request):
 

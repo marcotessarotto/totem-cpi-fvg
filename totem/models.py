@@ -3,6 +3,8 @@ import datetime
 from django.db import models
 from django.utils import timezone
 
+from ckeditor.fields import RichTextField
+
 #datetime e timezone utili nel caso di funzioni sulle date
 # come da tutorial
 
@@ -44,11 +46,13 @@ class FileItem(models.Model):
 
 
 class MapZone(models.Model):
-    title = models.CharField(max_length=1024, verbose_name="nome della zona")
+    title = RichTextField(max_length=1024, verbose_name="nome della zona")
 
     floor = models.CharField(max_length=1024, blank=True, null=True, verbose_name="piano")
 
     tag = models.CharField(max_length=1024, blank=True, null=True, verbose_name="tag identificativo")
+
+    description = models.CharField(max_length=1024, blank=True, null=True, verbose_name="descrizione")
 
     def __str__(self):
         return "MapZone " + str(self.id) + ' (' + \
@@ -59,9 +63,9 @@ class Area(models.Model):
     title = models.CharField(max_length=1024, verbose_name="nome dell'area")
 
     where = models.ForeignKey(MapZone, on_delete=models.PROTECT, blank=True, null=True, verbose_name="dove?")
-    when = models.TextField(max_length=1024, blank=True, null=True, verbose_name="quando?")
-    how = models.TextField(max_length=1024, blank=True, null=True, verbose_name="come?")
-    for_who = models.TextField(max_length=1024, blank=True, null=True, verbose_name="per chi?")
+    when = RichTextField(max_length=1024, blank=True, null=True, verbose_name="quando?")
+    how = RichTextField(max_length=1024, blank=True, null=True, verbose_name="come?")
+    for_who = RichTextField(max_length=1024, blank=True, null=True, verbose_name="per chi?")
 
     image = models.ForeignKey(FileItem, on_delete=models.PROTECT, null=True, blank=True, verbose_name="immagine")
 
@@ -94,8 +98,8 @@ class Area(models.Model):
 class Content(models.Model):
     area = models.ForeignKey(Area, on_delete=models.CASCADE)
 
-    title = models.CharField(max_length=1024)
-    text = models.TextField(max_length=4096, blank=True, null=True,)
+    title = RichTextField(max_length=1024)
+    text = RichTextField(max_length=4096, blank=True, null=True,)
 
     image = models.ForeignKey(FileItem, on_delete=models.PROTECT, null=True, blank=True, verbose_name="immagine")
 
