@@ -4,6 +4,7 @@ from django.db import models
 from django.utils import timezone
 
 from ckeditor.fields import RichTextField
+from colorful.fields import RGBColorField
 
 #datetime e timezone utili nel caso di funzioni sulle date
 # come da tutorial
@@ -52,7 +53,7 @@ class MapZone(models.Model):
 
     tag = models.CharField(max_length=1024, blank=True, null=True, verbose_name="tag identificativo")
 
-    description = models.CharField(max_length=1024, blank=True, null=True, verbose_name="descrizione")
+    description = RichTextField(max_length=1024, blank=True, null=True, verbose_name="descrizione")
 
     def __str__(self):
         return "MapZone " + str(self.id) + ' (' + \
@@ -60,12 +61,14 @@ class MapZone(models.Model):
 
 
 class Area(models.Model):
-    title = models.CharField(max_length=1024, verbose_name="nome dell'area")
+    title = RichTextField(max_length=1024, verbose_name="nome dell'area")
 
     where = models.ForeignKey(MapZone, on_delete=models.PROTECT, blank=True, null=True, verbose_name="dove?")
     when = RichTextField(max_length=1024, blank=True, null=True, verbose_name="quando?")
     how = RichTextField(max_length=1024, blank=True, null=True, verbose_name="come?")
     for_who = RichTextField(max_length=1024, blank=True, null=True, verbose_name="per chi?")
+
+    color = RGBColorField(blank=True, null=True,)
 
     image = models.ForeignKey(FileItem, on_delete=models.PROTECT, null=True, blank=True, verbose_name="immagine")
 
@@ -89,7 +92,22 @@ class Area(models.Model):
 
         a = Area()
         a.title = "Accoglienza informazioni"
-        # a.
+        a.save()
+
+        a = Area()
+        a.title = "Colloqui individuali"
+        a.save()
+
+        a = Area()
+        a.title = "Laboratori di gruppo"
+        a.save()
+
+        a = Area()
+        a.title = "Servizio incontro domanda offerta"
+        a.save()
+
+        a = Area()
+        a.title = "Attivazione tirocini"
         a.save()
 
         return True
