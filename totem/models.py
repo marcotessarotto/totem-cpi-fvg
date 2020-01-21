@@ -43,10 +43,22 @@ class FileItem(models.Model):
             "%d/%m/%y")
 
 
-class Area(models.Model):
-    area_name = models.CharField(max_length=1024, verbose_name="nome dell'area")
+class MapZone(models.Model):
+    title = models.CharField(max_length=1024, verbose_name="nome della zona")
 
-    where = models.TextField(max_length=1024, blank=True, null=True, verbose_name="dove?")
+    floor = models.CharField(max_length=1024, blank=True, null=True, verbose_name="piano")
+
+    tag = models.CharField(max_length=1024, blank=True, null=True, verbose_name="tag identificativo")
+
+    def __str__(self):
+        return "MapZone " + str(self.id) + ' (' + \
+               str(self.title) + ') '
+
+
+class Area(models.Model):
+    title = models.CharField(max_length=1024, verbose_name="nome dell'area")
+
+    where = models.ForeignKey(MapZone, on_delete=models.PROTECT, blank=True, null=True, verbose_name="dove?")
     when = models.TextField(max_length=1024, blank=True, null=True, verbose_name="quando?")
     how = models.TextField(max_length=1024, blank=True, null=True, verbose_name="come?")
     for_who = models.TextField(max_length=1024, blank=True, null=True, verbose_name="per chi?")
@@ -61,7 +73,22 @@ class Area(models.Model):
         verbose_name_plural = 'Aree'
 
     def __str__(self):
-        return self.area_name
+        return self.title
+
+    @staticmethod
+    def fill_default_areas():
+
+        print("fill_default_areas")
+
+        if len(Area.objects.all()) != 0:
+            return False
+
+        a = Area()
+        a.title = "Accoglienza informazioni"
+        # a.
+        a.save()
+
+        return True
 
 
 class Content(models.Model):

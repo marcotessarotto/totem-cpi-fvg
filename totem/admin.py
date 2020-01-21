@@ -10,8 +10,36 @@ admin.site.site_header = f'backoffice Totem-cpi'
 
 admin.site.register(Category)
 admin.site.register(FileItem)
+admin.site.register(MapZone)
 
-admin.site.register(Area)
+
+@admin.register(Area)
+class AreaAdmin(admin.ModelAdmin,):
+    list_display = ('id', 'title', )
+
+    def add_default_areas(self, request):
+
+        result = Area.fill_default_areas()
+
+        if result:
+            self.message_user(request, "le aree di default sono state aggiunte")
+        else:
+            self.message_user(request, "non ho fatto nulla, ci sono già aree presenti")
+
+        from django.http import HttpResponseRedirect
+        return HttpResponseRedirect("../")
+
+    add_default_areas.short_description = "Aggiungi le aree di default"
+
+    change_list_template = "areas/areas_changelist.html"
+
+    def get_urls(self):
+        urls = super().get_urls()
+        from django.urls import path
+        my_urls = [
+            path('add_default_areas/', self.add_default_areas),
+        ]
+        return my_urls + urls
 
 
 @admin.register(Content)
