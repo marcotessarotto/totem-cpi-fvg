@@ -73,14 +73,15 @@ WSGI_APPLICATION = 'cpi_fvg.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
+# Database
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'totem_db',
-        'USER': 'totem_dbuser',
-        'PASSWORD': 'CP1-pgsql2020',
-        'HOST': 'localhost',
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': DB_NAME,
+        'USER': DB_USERNAME,
+        'PASSWORD': DB_PWD,
+        'HOST': DB_HOSTNAME,
+        'PORT': '',
     }
 }
 
