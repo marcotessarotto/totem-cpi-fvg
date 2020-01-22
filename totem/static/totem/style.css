@@ -94,7 +94,10 @@ ul a{
 
 
 ul a span{
+	/* prima di aere i <p> altezza del testo nei box
 	top: 50%;
+	*/
+	top: 50%
 	margin-top: -0.7em;
 	display: block;
 }
