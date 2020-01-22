@@ -9,5 +9,5 @@ urlpatterns = [
     # # totem/17/ (con barra finale)
     # path('<int:area_id>/', views.area, name='area'),
     # # totem/17/content
-    # path('<int:content_id>/content', views.content, name='content'),
+    path('<int:content_id>/content', views.content, name='content'),
 ]

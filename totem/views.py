@@ -20,14 +20,14 @@ from .models import Area, Content
 #     #print(title)
 #     return HttpResponse("Stai vedendo MACROAREA %s." % title)
 #
-# def content(request, content_id):
-#
-#     #content_text = Content.objects.all()
-#     content_text = Content.objects.get(pk=content_id)
-#     context = {'content_text' : content_text}
-#     return  render(request, 'totem/content.html',context)
-#
-#     #return HttpResponse("Sei su CONTENUTO %s." % content_id)
+def content(request, content_id):
+
+    #content_text = Content.objects.all()
+    content_text = Content.objects.get(pk=content_id)
+    context = {'content_text' : content_text}
+    return  render(request, 'totem/content.html',context)
+
+    #return HttpResponse("Sei su CONTENUTO %s." % content_id)
 
 
 class IndexView(generic.View):

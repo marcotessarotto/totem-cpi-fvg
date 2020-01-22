@@ -20,7 +20,7 @@
                       <!--da cambiare in for content in area.contents/  era for area in areas -->
                       {% for content in area.contents %}
 <!--                      test con area.title -->
-                        <li class="section"><a href="#"><span>{{ content.title }}</span></a></li>
+                        <li class="section"><a href="/totem/{{ content.id }}/content"><span>{{ content.title }}</span></a></li>
                       {% endfor %}
 
                   </ul>
