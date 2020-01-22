@@ -44,8 +44,17 @@ class FileItem(models.Model):
             "%d/%m/%y")
 
 
+class Office(models.Model):
+    title = RichTextField(max_length=1024, verbose_name="nome dell'ufficio")
+
+    def __str__(self):
+        return "Office " + str(self.id) + ' (' + \
+               str(self.title) + ') '
+
 class MapZone(models.Model):
     title = RichTextField(max_length=1024, verbose_name="nome della zona")
+
+    color = RGBColorField(blank=True, null=True, )
 
     floor = models.CharField(max_length=1024, blank=True, null=True, verbose_name="piano")
 
@@ -74,6 +83,8 @@ class Area(models.Model):
     title = RichTextField(max_length=1024, verbose_name="nome dell'area")
 
     color = RGBColorField(blank=True, null=True,)
+
+    office = models.ForeignKey(Office, on_delete=models.PROTECT, blank=True, null=True, verbose_name="dove?")
 
     image = models.ForeignKey(FileItem, on_delete=models.PROTECT, null=True, blank=True, verbose_name="immagine")
 
