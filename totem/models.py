@@ -6,8 +6,6 @@ from django.utils import timezone
 from ckeditor.fields import RichTextField
 from colorful.fields import RGBColorField
 
-#datetime e timezone utili nel caso di funzioni sulle date
-# come da tutorial
 
 LANGUAGES = (
     ('it', 'Italiano'),
@@ -112,6 +110,7 @@ class Area(models.Model):
         a = Area()
         a.title = "Servizio incontro domanda offerta"
         a.save()
+
 
         a = Area()
         a.title = "Attivazione tirocini"
