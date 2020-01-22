@@ -16,6 +16,8 @@ admin.site.register(FileItem)
 admin.site.register(MapZone)
 
 admin.site.register(Informations)
+admin.site.register(UserAction)
+admin.site.register(Office)
 
 
 # class AreaAdminForm(forms.ModelForm):

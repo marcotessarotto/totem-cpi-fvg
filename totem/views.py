@@ -4,7 +4,8 @@ from django.http import HttpResponse
 from django.template import loader
 from django.views import generic
 
-from .models import Area, Content
+from .models import Area, Content, UserAction
+
 
 # def index(request):
 #     area_list = Area.objects.order_by('-area_name')[:5]
@@ -22,6 +23,16 @@ from .models import Area, Content
 #
 def content(request, content_id):
 
+    if not request.session.session_key:
+        request.session.create()
+
+    print(request.session.session_key)
+
+    ua = UserAction()
+    ua.content_id = content_id
+    ua.session_id = request.session.session_key
+    ua.save()
+
     #content_text = Content.objects.all()
     content_text = Content.objects.get(pk=content_id)
     context = {'content_text' : content_text}
@@ -34,7 +45,9 @@ class IndexView(generic.View):
 
     def get(self, request, *args, **kwargs):
 
-        # tutte le aree, tutti i content,
+        ua = UserAction()
+        ua.session_id = request.session.session_key
+        ua.save()
 
         areas = []
         for area in Area.objects.order_by('id'):

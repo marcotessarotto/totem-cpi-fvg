@@ -161,3 +161,17 @@ class Content(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class UserAction(models.Model):
+
+    session_id = models.CharField(max_length=64)
+    content_id = models.SmallIntegerField(default=-1)
+    information_id = models.SmallIntegerField(default=-1)
+    mapzone_id = models.SmallIntegerField(default=-1)
+
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name='data inserimento')
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return str(self.id)
