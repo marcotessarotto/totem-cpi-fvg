@@ -15,7 +15,8 @@
 
                 <li></li>
                 {% for area in areas %}
-                <li class="macro_area num_1">
+<!--                  esempio macro_area num_1 per usarlo con il css, cambiare con enum-->
+                <li class="macro_area num_{{ area.id }}">
                   <a href="#"><span>{{ area.title }}</span></a>
                   <ul class="sections">
                       <!--da cambiare in for content in area.contents/  era for area in areas -->
