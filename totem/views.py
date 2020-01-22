@@ -33,10 +33,17 @@ from .models import Area, Content
 class IndexView(generic.View):
 
     def get(self, request, *args, **kwargs):
-        print("ciao")
 
         # tutte le aree, tutti i content,
 
-        context = {'areas': Area.objects.all(), 'contents': Content.objects.all() }
+        areas = []
+        for area in Area.objects.order_by('id'):
+
+            queryset = Content.objects.filter(area=area).order_by('id')
+
+            area.contents = queryset
+            areas.append(area)
+
+        context = {'areas': areas}
 
         return render(request, 'totem/homepage.html', context)

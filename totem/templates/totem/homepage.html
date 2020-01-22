@@ -5,7 +5,13 @@
 
 {% for area in areas %}
 
-    {% for content in areas %}
+    {{ area }} <br>
+
+
+    {% for content in area.contents %}
+          {{ content }} <br>
+    {% endfor %}
+
 
 
 {% endfor %}
