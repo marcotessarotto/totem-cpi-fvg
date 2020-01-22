@@ -1,6 +1,8 @@
 
 {% load static %}
 
+{% autoescape off %}
+
 <link rel="stylesheet" type="text/css" href="{% static 'totem/style.css' %}" />
 
 <div class="content">
@@ -32,4 +34,7 @@
 
     </figure>
   </div>
+
+
+{% endautoescape %}
 
