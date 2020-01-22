@@ -60,13 +60,20 @@ class MapZone(models.Model):
                str(self.title) + ') '
 
 
-class Area(models.Model):
-    title = RichTextField(max_length=1024, verbose_name="nome dell'area")
+class Informations(models.Model):
 
     where = models.ForeignKey(MapZone, on_delete=models.PROTECT, blank=True, null=True, verbose_name="dove?")
     when = RichTextField(max_length=1024, blank=True, null=True, verbose_name="quando?")
     how = RichTextField(max_length=1024, blank=True, null=True, verbose_name="come?")
     for_who = RichTextField(max_length=1024, blank=True, null=True, verbose_name="per chi?")
+
+    class Meta:
+        verbose_name = 'Informazioni'
+        verbose_name_plural = 'Informazioni'
+
+
+class Area(models.Model):
+    title = RichTextField(max_length=1024, verbose_name="nome dell'area")
 
     color = RGBColorField(blank=True, null=True,)
 
@@ -132,6 +139,8 @@ class Content(models.Model):
     linked_contents = models.ManyToManyField('Content', blank=True, verbose_name="contenuti collegati")
 
     level = models.SmallIntegerField(default=1)
+
+    information = models.ForeignKey(Informations, on_delete=models.PROTECT, null=True, blank=True, verbose_name="dove, come, quando, per chi?")
 
     created_at = models.DateTimeField(auto_now_add=True, verbose_name='data inserimento')
     updated_at = models.DateTimeField(auto_now=True)

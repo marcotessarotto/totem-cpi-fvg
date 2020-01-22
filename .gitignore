@@ -134,7 +134,7 @@ secrets.py
 migrations/
 
 /static
-/totem/static/
+
 
 static/
 

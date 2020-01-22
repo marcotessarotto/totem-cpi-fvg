@@ -15,6 +15,8 @@ admin.site.register(Category)
 admin.site.register(FileItem)
 admin.site.register(MapZone)
 
+admin.site.register(Informations)
+
 
 # class AreaAdminForm(forms.ModelForm):
 #     content = forms.CharField(widget=CKEditorWidget())
