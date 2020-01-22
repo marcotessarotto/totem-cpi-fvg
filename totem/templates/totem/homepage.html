@@ -6,81 +6,40 @@
 {% for area in areas %}
 
     {{ area }} <br>
-
-
-    {% for content in area.contents %}
-          {{ content }} <br>
-    {% endfor %}
-
-
+        {% for content in area.contents %}
+              {{ content }} <br>
+       {% endfor %}
 
 {% endfor %}
 
 
 <div class="content">
-    <h1>MAPPA DEI SERVIZI</h1>
-    <figure class="org-chart cf">
-      <ul class="administration">
-        <li>
-          <ul class="director">
-            <li>
-              <!--<a href="#"><span>Nodo padre</span></a>-->
-              <ul class="subdirector">
-                <!-- <li><a href="#"><span>Assistante Director</span></a></li> -->
-              </ul>
-              <ul class="departments cf">
-                <li> <!-- <a href="#"><span>Administration</span></a> --></li>
-                <li class="department dep-a">
+    <h1>MAPPA DEI SERVIZI DEL CENTRO PER L'IMPIEGO</h1>
+    <figure class="org-chart cf"></figure>
+
+
+
+              <ul class="father cf">
+
+                <li></li>
+                {% for area in areas %}
+                <li class="macro_area num_1">
                   <a href="#"><span>Macroarea A</span></a>
                   <ul class="sections">
-                    <li class="section"><a href="#"><span>prova{{ }}</span></a></li>
-                    <li class="section"><a href="#"><span>Content 2</span></a></li>
-                    <li class="section"><a href="#"><span>Content 3</span></a></li>
-                    <li class="section"><a href="#"><span>Content 4</span></a></li>
-                    <li class="section"><a href="#"><span>Content 5</span></a></li>
+                      <!--da cambiare in for content in area.contents -->
+                      {% for area in areas %}
+                         <!--da cambiare in for content in { content }} -->
+                        <li class="section"><a href="#"><span>{{ area.title }}</span></a></li>
+                      {% endfor %}
+
                   </ul>
                 </li>
-                <li class="department dep-b">
-                  <a href="#"><span>Macroarea B</span></a>
-                  <ul class="sections">
-                    <li class="section"><a href="#"><span>Content 1</span></a></li>
-                    <li class="section"><a href="#"><span>Content 2</span></a></li>
-                    <li class="section"><a href="#"><span>Content 3</span></a></li>
-                    <li class="section"><a href="#"><span>Content 4</span></a></li>
-                  </ul>
-                </li>
-                <li class="department dep-c">
-                  <a href="#"><span>Macroarea C</span></a>
-                  <ul class="sections">
-                    <li class="section"><a href="#"><span>Content 1</span></a></li>
-                    <li class="section"><a href="#"><span>Content 2</span></a></li>
-                    <li class="section"><a href="#"><span>Content 3</span></a></li>
-                    <li class="section"><a href="#"><span>Content 4</span></a></li>
-                  </ul>
-                </li>
-                <li class="department dep-d">
-                  <a href="#"><span>Macroarea D</span></a>
-                  <ul class="sections">
-                    <li class="section"><a href="#"><span>Content 1</span></a></li>
-                    <li class="section"><a href="#"><span>Content 2</span></a></li>
-                    <li class="section"><a href="#"><span>Content 3</span></a></li>
-                    <li class="section"><a href="#"><span>Content 4</span></a></li>
-                    <li class="section"><a href="#"><span>Content 5</span></a></li>
-                    <li class="section"><a href="#"><span>Content 6</span></a></li>
-                  </ul>
-                </li>
-                <li class="department dep-e">
-                  <a href="#"><span>Macroarea E</span></a>
-                  <ul class="sections">
-                    <li class="section"><a href="#"><span>Content 1</span></a></li>
-                    <li class="section"><a href="#"><span>Content 2</span></a></li>
-                    <li class="section"><a href="#"><span>Content 3</span></a></li>
-                  </ul>
-                </li>
+                {% endfor %}
+
+
               </ul>
-            </li>
-          </ul>
-        </li>
-      </ul>
+
+
     </figure>
   </div>
+

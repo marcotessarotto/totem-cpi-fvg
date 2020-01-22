@@ -101,15 +101,15 @@ ul a span{
 
 
 
-.department:first-child,
-.departments li:nth-child(2){
+.macro_area:first-child,
+.father li:nth-child(2){
 	margin-left: 0;
-	clear: left;	
+	clear: left;
 }
 
 /*restante vericale*/
 
-.department{
+.macro_area{
 	border-left: 4px solid rgb(192, 80, 77);
 	width: 18.59894921190893%;
 	float: left;
@@ -118,7 +118,7 @@ ul a span{
 }
 
 
-.lt-ie8 .department{
+.lt-ie8 .macro_area{
 	width: 18.25%;
 }
 
@@ -126,13 +126,13 @@ ul a span{
 /*visibile solo restringendo*/
 
 @media screen and (max-width: 767px){
-	.department{
+	.macro_area{
 		float: none;
 		width: 100%;
 		margin-left: 0;
 	}
 
-	.department:before{
+	.macro_area:before{
 		content: "";
 		display: block;
 		position: absolute;
@@ -145,38 +145,38 @@ ul a span{
 		margin-left: -4px;
 	}
 
-	.department:nth-child(2):before{
+	.macro_area:nth-child(2):before{
 		display: none;
 	}
 }
 /* MACRO AREA */
-.department > a{
+.macro_area > a{
 	margin: 0 0 -26px -4px;
 	z-index: 1;
 }
 
 /* HOVER DELLA MACRO AREA*/
-.department > a:hover{	
+.macro_area > a:hover{
 	height: 80px;
 }
 
 
-.department > ul{
+.macro_area > ul{
 	margin-top: 0px;
 	margin-bottom: 0px;
 }
 
-.department li{	
+.macro_area li{
 	padding-left: 25px;
 	/*trattino di collegamento dei content / li */
     border-bottom: 4px solid rgb(192, 80, 77);
-	height: 80px;	
+	height: 80px;
 }
 
 
-.department li a{
+.macro_area li a{
 	background: #fff;
-	top: 48px;	
+	top: 48px;
 	position: absolute;
 	z-index: 1;
 	width: 90%; /*larghezza rispetto a macroarea*/
@@ -193,7 +193,7 @@ ul a span{
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#40000000', endColorstr='#00000000',GradientType=1 );
 }
 
-.department li a:hover{
+.macro_area li a:hover{
 	box-shadow: 8px 8px 9px -4px rgba(0,0,0,0.1);
 	height: 80px;
 	width: 95%;
@@ -203,10 +203,11 @@ ul a span{
 
 
 
-/* Department/Content section colors */
+/* Macro_area/Content section colors */
 
-.department.dep-a a{ background: rgb(255, 162, 161); }
-.department.dep-b a{ background: rgb(218, 253, 167); }
-.department.dep-c a{ background: rgb(201, 181, 232); }
-.department.dep-d a{ background: rgb(158, 234, 255); }
-.department.dep-e a{ background: rgb(255, 190, 134); }
+.macro_area.num_1 a{ background: rgb(255, 162, 161); }
+.macro_area.num_2 a{ background: rgb(218, 253, 167); }
+.macro_area.num_3 a{ background: rgb(201, 181, 232); }
+.macro_area.num_4 a{ background: rgb(158, 234, 255); }
+.macro_area.num_5 a{ background: rgb(255, 190, 134); }
+.macro_area.num_6 a{ background: rgb(255, 190, 134); }
