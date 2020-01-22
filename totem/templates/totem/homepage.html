@@ -3,16 +3,6 @@
 
 <link rel="stylesheet" type="text/css" href="{% static 'totem/style.css' %}" />
 
-{% for area in areas %}
-
-    {{ area }} <br>
-        {% for content in area.contents %}
-              {{ content }} <br>
-       {% endfor %}
-
-{% endfor %}
-
-
 <div class="content">
     <h1>MAPPA DEI SERVIZI DEL CENTRO PER L'IMPIEGO</h1>
     <figure class="org-chart cf"></figure>
@@ -24,12 +14,12 @@
                 <li></li>
                 {% for area in areas %}
                 <li class="macro_area num_1">
-                  <a href="#"><span>Macroarea A</span></a>
+                  <a href="#"><span>{{ area.title }}</span></a>
                   <ul class="sections">
-                      <!--da cambiare in for content in area.contents -->
-                      {% for area in areas %}
-                         <!--da cambiare in for content in { content }} -->
-                        <li class="section"><a href="#"><span>{{ area.title }}</span></a></li>
+                      <!--da cambiare in for content in area.contents/  era for area in areas -->
+                      {% for content in area.contents %}
+<!--                      test con area.title -->
+                        <li class="section"><a href="#"><span>{{ content.title }}</span></a></li>
                       {% endfor %}
 
                   </ul>
