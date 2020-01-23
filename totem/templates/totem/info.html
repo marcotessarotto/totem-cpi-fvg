@@ -1,10 +1,22 @@
 {% autoescape off %}
 
-<h2> {{ info_text.title }} </h2>
+<h2> {{ info_text.id }} </h2>
 <br><br><br>
 
 <div>
-   {{ info_text.text }}
+   {{ info_text.where }}
+</div>
+
+<div>
+   {{ info_text.how }}
+</div>
+
+<div>
+   {{ info_text.when }}
+</div>
+
+<div>
+   {{ info_text.for_who }}
 </div>
 
 {% endautoescape %}
