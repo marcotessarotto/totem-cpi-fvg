@@ -4,7 +4,7 @@ from django.http import HttpResponse
 from django.template import loader
 from django.views import generic
 
-from .models import Area, Content, UserAction
+from .models import Area, Content, UserAction, Informations
 
 
 # def index(request):
@@ -40,6 +40,15 @@ def content(request, content_id):
 
     #return HttpResponse("Sei su CONTENUTO %s." % content_id)
 
+
+def info(request, content_id, info_id):
+    #passaggio di 2 parametri, id di content e id associato di info
+    #info_text = get_object_or_404(Content, id=content_id, information_id=info_id)
+    print("\nREAD_ \n\n", info_id, content_id)
+    info_text = Content.objects.get(id=content_id, information_id=info_id)
+    #print("\nREAD_ \n\n", info_text)
+    context = {'info_text': info_text}
+    return render(request, 'totem/info.html', context)
 
 class IndexView(generic.View):
 
