@@ -13,14 +13,17 @@
 
                 <li></li>
                 {% for area in areas %}
-<!--                  esempio macro_area num_1 per usarlo con il css, cambiare con enum-->
+<!--                  es: macro_area num_1 per uso con css, cambiare con enum-->
                 <li class="macro_area num_{{ area.id }}">
                   <a href="#"><span>{{ area.title }}</span></a>
                   <ul class="sections">
-                      <!--da cambiare in for content in area.contents/  era for area in areas -->
+
                       {% for content in area.contents %}
-<!--                      test con area.title -->
+                      {% if content.level == 1 %}
+
                         <li class="section"><a href="/totem/{{ content.id }}/content"><span>{{ content.title }}</span></a></li>
+
+                      {% endif %}
                       {% endfor %}
 
                   </ul>

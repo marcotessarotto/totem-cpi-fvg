@@ -97,7 +97,7 @@ ul a span{
 	/* prima di aree i <p> altezza del testo nei box
 	top: 50%;
 	*/
-	top: 50%;
+	top: 25%;
 	margin-top: -0.7em;
 	display: block;
 }

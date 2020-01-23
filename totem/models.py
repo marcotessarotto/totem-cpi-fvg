@@ -163,6 +163,7 @@ class Content(models.Model):
         return self.title
 
 
+
 class UserAction(models.Model):
 
     session_id = models.CharField(max_length=64)
