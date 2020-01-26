@@ -166,7 +166,7 @@ class Content(models.Model):
 
 class UserAction(models.Model):
 
-    session_id = models.CharField(max_length=64)
+    session_id = models.CharField(max_length=64, blank=True, null=True)
     content_id = models.SmallIntegerField(default=-1)
     information_id = models.SmallIntegerField(default=-1)
     mapzone_id = models.SmallIntegerField(default=-1)
