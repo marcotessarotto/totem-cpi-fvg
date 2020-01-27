@@ -6,7 +6,6 @@ from django.utils import timezone
 from ckeditor.fields import RichTextField
 from colorful.fields import RGBColorField
 
-
 LANGUAGES = (
     ('it', 'Italiano'),
     ('en', 'English'),
@@ -51,6 +50,7 @@ class Office(models.Model):
         return "Office " + str(self.id) + ' (' + \
                str(self.title) + ') '
 
+
 class MapZone(models.Model):
     title = RichTextField(max_length=1024, verbose_name="nome della zona")
 
@@ -74,7 +74,7 @@ class MapZone(models.Model):
 class Area(models.Model):
     title = RichTextField(max_length=1024, verbose_name="nome dell'area")
 
-    color = RGBColorField(blank=True, null=True,)
+    color = RGBColorField(blank=True, null=True, )
 
     office = models.ForeignKey(Office, on_delete=models.PROTECT, blank=True, null=True, verbose_name="dove?")
 
@@ -92,7 +92,6 @@ class Area(models.Model):
 
     @staticmethod
     def fill_default_areas():
-
         print("fill_default_areas")
 
         if len(Area.objects.all()) != 0:
@@ -114,7 +113,6 @@ class Area(models.Model):
         a.title = "Servizio incontro domanda offerta"
         a.save()
 
-
         a = Area()
         a.title = "Attivazione tirocini"
         a.save()
@@ -129,7 +127,6 @@ class Informations(models.Model):
     how = RichTextField(max_length=1024, blank=True, null=True, verbose_name="come?")
     for_who = RichTextField(max_length=1024, blank=True, null=True, verbose_name="per chi?")
 
-
     class Meta:
         verbose_name = 'Informazioni'
         verbose_name_plural = 'Informazioni'
@@ -138,11 +135,12 @@ class Informations(models.Model):
         return "Info " + str(self.id) + ' (' + \
                str(self.area) + ') '
 
+
 class Content(models.Model):
     area = models.ForeignKey(Area, on_delete=models.CASCADE)
 
     title = RichTextField(max_length=1024)
-    text = RichTextField(max_length=4096, blank=True, null=True,)
+    text = RichTextField(max_length=4096, blank=True, null=True, )
 
     image = models.ForeignKey(FileItem, on_delete=models.PROTECT, null=True, blank=True, verbose_name="immagine")
 
@@ -158,7 +156,8 @@ class Content(models.Model):
 
     level = models.SmallIntegerField(default=1)
 
-    information = models.ForeignKey(Informations, on_delete=models.PROTECT, null=True, blank=True, verbose_name="dove, come, quando, per chi?")
+    information = models.ForeignKey(Informations, on_delete=models.PROTECT, null=True, blank=True,
+                                    verbose_name="dove, come, quando, per chi?")
 
     created_at = models.DateTimeField(auto_now_add=True, verbose_name='data inserimento')
     updated_at = models.DateTimeField(auto_now=True)
@@ -171,9 +170,7 @@ class Content(models.Model):
         return self.title
 
 
-
 class UserAction(models.Model):
-
     session_id = models.CharField(max_length=64, blank=True, null=True)
     content_id = models.SmallIntegerField(default=-1)
     information_id = models.SmallIntegerField(default=-1)

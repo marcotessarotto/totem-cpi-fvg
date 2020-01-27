@@ -48,4 +48,17 @@ h2 {
    {{ content_text.text }}
 </div>
 
+<div>
+   <!--sezione dove se c'è qualche contenuto collegato ne mostra i titoli,
+      da fare link e poi bottone
+      -->
+   <ul>
+   {% for linked in linked_content %}
+      <li>
+         {{ linked.title }}
+      </li>
+   {% endfor %}
+   </ul>
+</div>
+
 {% endautoescape %}
