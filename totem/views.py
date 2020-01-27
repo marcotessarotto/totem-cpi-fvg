@@ -42,10 +42,9 @@ def content(request, content_id):
 
 def info(request, info_id):
 
-    info_text = get_object_or_404(Informations, id=info_id)
+    info_text = get_object_or_404(Informations, area=info_id)
 
     context = {'info_text': info_text}
-    print("------------>", context, request, info_id)
     return render(request, 'totem/info.html', context)
 
 
