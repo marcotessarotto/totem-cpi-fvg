@@ -1,5 +1,6 @@
 <style>
 body {
+    margin: 20px;
     padding-left: 15px;
 }
 h2 {
@@ -38,9 +39,11 @@ h2 {
 
 <h2> {{ content_text.title }} </h2>
 <br><br><br>
+
 <div class="topcorner">
-   <a href="/totem/{{ content_text.id}}/content" class="button">Informazioni Aggiuntive</a>
+   <a href="/totem/{{content_text.id}}/content/{{ content_text.id }}/info" class="button">Informazioni Aggiuntive</a>
 </div>
+
 <div class="roundbox">
    {{ content_text.text }}
 </div>

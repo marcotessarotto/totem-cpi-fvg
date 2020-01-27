@@ -38,11 +38,9 @@ def content(request, content_id):
     context = {'content_text' : content_text}
     return  render(request, 'totem/content.html',context)
 
-    #return HttpResponse("Sei su CONTENUTO %s." % content_id)
 
 
-def info(request, content_id, info_id):
-    #passaggio di 2 parametri, id di content e id associato di info
+def info(request, info_id):
 
     info_text = get_object_or_404(Informations, id=info_id)
     context = {'info_text': info_text}

@@ -1,21 +1,58 @@
 {% autoescape off %}
 
-<h2> {{ info_text.id }} </h2>
-<br><br><br>
+<style>
+body {
+    margin: 20px;
+    padding-left: 15px;
+}
+h2 {
+   text-align: center;
+}
+.roundbox {
+  text-align:justify;
+  border-radius: 25px;
+  border: 4px solid rgb(255, 162, 161);
+  padding: 20px;
+  margin: 40px;
+}
+.topcorner{
+   padding: 4px;
+   position:absolute;
+   top:10;
+   right:10;
+  }
+.button {
+  background-color: rgb(255, 162, 161);
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 25px;
+}
+</style>
 
-<div>
-   {{ info_text.where }}
+
+Dove =>
+<div class = "roundbox">
+   {{ info_text.where.title }}
 </div>
 
-<div>
+Come =>
+<div class = "roundbox">
    {{ info_text.how }}
 </div>
-
-<div>
+Quando =>
+<div class = "roundbox">
    {{ info_text.when }}
-</div>
+</div class = "roundbox">
 
-<div>
+Per chi =>
+<div class = "roundbox">
    {{ info_text.for_who }}
 </div>
 

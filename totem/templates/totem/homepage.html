@@ -5,6 +5,13 @@
 
 <link rel="stylesheet" type="text/css" href="{% static 'totem/style.css' %}" />
 
+<!--
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+-->
+
 <div class="content">
     <h1>MAPPA DEI SERVIZI DEL CENTRO PER L'IMPIEGO</h1>
     <figure class="org-chart cf">
@@ -22,7 +29,7 @@
                       {% for content in area.contents %}
                       {% if content.level == 1 %}
 
-                        <li class="section"><a href="/totem/{{ content.id }}/content"><span>{{ content.title }}</span></a></li>
+                        <li class="section"><a href="content/{{ content.id }}/"><span>{{ content.title }}</span></a></li>
 
                       {% endif %}
                       {% endfor %}
@@ -34,8 +41,31 @@
               </ul>
 
     </figure>
-  </div>
 
+</div>
+
+<style>
+.mappa{
+    margin: 50%;
+    padding: 20px 66px;
+    border: 2px solid black;
+    text-align: center;
+    background-color: #9a3a3a;
+    color:white;
+    text-decoration: none;
+}
+
+</style>
+
+
+<div>
+    <a class="mappa" href="{% static 'totem/map1.png' %}">MAPPA</a>
+</div>
+<!--
+<div class="container">
+    <a class="btn btn-info" role="button" href="{% static 'totem/map1.png' %}">MAPPA</a>
+</div>
+-->
 
 {% endautoescape %}
 

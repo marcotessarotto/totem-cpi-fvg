@@ -62,6 +62,10 @@ class MapZone(models.Model):
 
     description = RichTextField(max_length=1024, blank=True, null=True, verbose_name="descrizione")
 
+    class Meta:
+        verbose_name = 'Zona della mappa'
+        verbose_name_plural = 'Zone della mappa'
+
     def __str__(self):
         return "MapZone " + str(self.id) + ' (' + \
                str(self.title) + ') '

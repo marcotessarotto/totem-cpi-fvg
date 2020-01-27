@@ -50,6 +50,7 @@ h1{
 	padding: 0 20px;
 }
 
+
 a:focus{
 	outline: 2px dashed #f7f7f7;
 }
@@ -70,7 +71,7 @@ ul a{
 	display: block;
     background: #ccc;
     /* bordo delle box, spessore */
-	border: 2px solid #000;
+	border: 2px solid black;
 	text-align: center;
 	overflow: hidden;
 	font-size: .7em;
@@ -203,7 +204,6 @@ ul a span{
 	top: 39px;
 	background-image: none!important;
 }
-
 
 
 /* Macro_area/Content section colors */

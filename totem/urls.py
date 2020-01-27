@@ -2,13 +2,15 @@ from django.urls import path
 
 from . import views
 
+app_name = 'totem'
+
 urlpatterns = [
     path('', views.IndexView.as_view(), name='index'),
 
-    # path('', views.index, name='index'),
     # # totem/17/ (con barra finale)
     # path('<int:area_id>/', views.area, name='area'),
     # # totem/17/content
-    path('<int:content_id>/content', views.content, name='content'),
-    path('<int:content_id>/content/<int:info_id>/info', views.info, name='info'),
+    path('content/<int:content_id>/', views.content, name='content'),
+    path('<int:info_id>/info', views.info, name='info'),
+    #path('<int:content_id>/content/<int:info_id>/info', views.info, name='info'),
 ]
