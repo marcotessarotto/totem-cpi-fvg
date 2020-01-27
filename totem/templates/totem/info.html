@@ -1,5 +1,6 @@
 {% autoescape off %}
 
+<!--
 <style>
 body {
     margin: 20px;
@@ -10,7 +11,6 @@ h2 {
 }
 .roundbox {
   text-align:justify;
-  border-radius: 25px;
   border: 4px solid rgb(255, 162, 161);
   padding: 20px;
   margin: 40px;
@@ -35,25 +35,53 @@ h2 {
   border-radius: 25px;
 }
 </style>
+-->
+<style>
+.tab {
+  font-family: Calibri, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
 
+.tab td, #tab th {
+  border: 2px solid #ddd;
+  padding: 8px;
+}
 
-Dove =>
-<div class = "roundbox">
-   {{ info_text.where.title }}
-</div>
+.tab tr:nth-child(even){background-color: #f2f2f2;}
 
-Come =>
-<div class = "roundbox">
-   {{ info_text.how }}
-</div>
-Quando =>
-<div class = "roundbox">
-   {{ info_text.when }}
-</div class = "roundbox">
+.tab tr:hover {background-color: #ddd;}
 
-Per chi =>
-<div class = "roundbox">
-   {{ info_text.for_who }}
-</div>
+.tab th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: rgb(255, 162, 161);
+  color: white;
+}
+</style>
+
+<table class="tab">
+   <tr>
+      <th></th>
+      <th></th>
+   </tr>
+   <tr>
+      <td>Dove==></td>
+      <td>{{ info_text.where.title }}</td>
+   </tr>
+   <tr>
+      <td>Come==></td>
+      <td>{{ info_text.how }}</td>
+   </tr>
+   <tr>
+      <td>Quando==></td>
+      <td>{{ info_text.when }}</td>
+   </tr>
+   <tr>
+      <td>Per chi==></td>
+      <td>{{ info_text.for_who }}</td>
+   </tr>
+</table>
 
 {% endautoescape %}

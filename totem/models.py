@@ -82,6 +82,10 @@ class Informations(models.Model):
         verbose_name = 'Informazioni'
         verbose_name_plural = 'Informazioni'
 
+    def area(self):
+
+        return
+
 
 class Area(models.Model):
     title = RichTextField(max_length=1024, verbose_name="nome dell'area")
