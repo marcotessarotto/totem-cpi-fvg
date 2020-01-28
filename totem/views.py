@@ -33,17 +33,28 @@ def content(request, content_id):
     ua.save()
 
     #content_text = Content.objects.all()
-    content_text = Content.objects.get(pk=content_id)
+    content_text = get_object_or_404(Content, id=content_id)
+    # content_text = Content.objects.get(pk=content_id)
     linked_content = Content.objects.filter(linked_contents__id=content_id)
+    # linked_content = #get_object_or_404(Content, id=content_id)
+
     context = {'content_text': content_text,
                'linked_content': linked_content}
     return render(request, 'totem/content.html', context)
 
 
 def info(request, info_id):
-    info_text = get_object_or_404(Informations, area=info_id)
+    area_id = request.GET.get('area_id', '-')
+    content_id = request.GET.get('content_id', '-')
 
-    context = {'info_text': info_text}
+    print(area_id)
+    print(content_id)
+
+    info_text = get_object_or_404(Informations, id=info_id)
+    content_instance = get_object_or_404(Content, id=content_id)
+
+    context = {'info_text': info_text, 'content': content_instance}
+
     return render(request, 'totem/info.html', context)
 
 

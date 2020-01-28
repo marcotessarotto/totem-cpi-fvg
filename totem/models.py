@@ -121,7 +121,7 @@ class Area(models.Model):
 
 
 class Informations(models.Model):
-    area = models.ForeignKey(Area, on_delete=models.PROTECT, blank=True, null=True, verbose_name="area")
+    # area = models.ForeignKey(Area, on_delete=models.PROTECT, blank=True, null=True, verbose_name="area")
     where = models.ForeignKey(MapZone, on_delete=models.PROTECT, blank=True, null=True, verbose_name="dove?")
     when = RichTextField(max_length=1024, blank=True, null=True, verbose_name="quando?")
     how = RichTextField(max_length=1024, blank=True, null=True, verbose_name="come?")
