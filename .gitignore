@@ -139,3 +139,5 @@ migrations/
 static/
 
 .idea/
+
+db.json
