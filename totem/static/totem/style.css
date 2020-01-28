@@ -29,7 +29,7 @@
 /* Generic styling */
 
 body{
-	font-family: Calibri, sans-serif; /* calibri e se non dovesse andare sans-serif */
+	font-family: Verdana; /* calibri e se non dovesse andare sans-serif */
 	font-size: large;
 	background: rgb(255, 255, 255);	
 }
