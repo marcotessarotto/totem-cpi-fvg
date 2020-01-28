@@ -145,7 +145,8 @@ class Informations(models.Model):
 class Content(models.Model):
     area = models.ForeignKey(Area, on_delete=models.CASCADE)
 
-    title = RichTextField(max_length=1024)
+    title = RichTextField(max_length=1024, blank=True, null=True, verbose_name="titolo")
+    # title = models.CharField(max_length=1024, blank=True, null=True, verbose_name="titolo")
     text = RichTextField(max_length=4096, blank=True, null=True, )
 
     image = models.ForeignKey(FileItem, on_delete=models.PROTECT, null=True, blank=True, verbose_name="immagine")
