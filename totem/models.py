@@ -184,9 +184,6 @@ class UserAction(models.Model):
 
     # action_type = models.SmallIntegerField(default=-1, choices=USER_ACTIONS, default=-1)
 
-    lang = models.CharField(max_length=3, choices=LANGUAGES, default='it',
-                            verbose_name="lingua")
-
     created_at = models.DateTimeField(auto_now_add=True, verbose_name='data inserimento')
     updated_at = models.DateTimeField(auto_now=True)
 
