@@ -62,7 +62,7 @@ class IndexView(generic.View):
 
     def get(self, request, *args, **kwargs):
         ua = UserAction()
-        ua.session_id = request.session.session_key
+        ua.session_id = request.session.session_keyl
         ua.save()
 
         areas = []

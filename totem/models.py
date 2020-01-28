@@ -132,8 +132,7 @@ class Informations(models.Model):
         verbose_name_plural = 'Informazioni'
 
     def __str__(self):
-        return "Info " + str(self.id) + ' (' + \
-               str(self.area) + ') '
+        return "Info " + str(self.id)
 
 
 class Content(models.Model):
