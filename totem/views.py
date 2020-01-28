@@ -61,8 +61,18 @@ def info(request, info_id):
 class IndexView(generic.View):
 
     def get(self, request, *args, **kwargs):
+
+        if not request.session.session_key:
+            request.session.create()
+            request.session.set_expiry(120)  # set http session timeout (seconds)
+
+            print(f"new sessionid: {request.session.session_key}")
+        else:
+            print(f"existing sessionid: {request.session.session_key}")
+
         ua = UserAction()
-        ua.session_id = request.session.session_keyl
+        ua.session_id = request.session.session_key
+        # ua.action_type =
         ua.save()
 
         areas = []

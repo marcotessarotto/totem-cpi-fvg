@@ -14,6 +14,13 @@ LANGUAGES = (
     ('hrv', 'Hrvatski jezik'),
 )
 
+USER_ACTIONS = (
+    (-1, '-')
+    (0, 'index')
+    (1, 'area')
+    (2, 'content')
+    (3, 'information')
+)
 
 class Category(models.Model):
     key = models.CharField(max_length=2)
@@ -174,6 +181,11 @@ class UserAction(models.Model):
     content_id = models.SmallIntegerField(default=-1)
     information_id = models.SmallIntegerField(default=-1)
     mapzone_id = models.SmallIntegerField(default=-1)
+
+    # action_type = models.SmallIntegerField(default=-1, choices=USER_ACTIONS, default=-1)
+
+    lang = models.CharField(max_length=3, choices=LANGUAGES, default='it',
+                            verbose_name="lingua")
 
     created_at = models.DateTimeField(auto_now_add=True, verbose_name='data inserimento')
     updated_at = models.DateTimeField(auto_now=True)

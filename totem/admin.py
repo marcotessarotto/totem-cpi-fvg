@@ -63,7 +63,7 @@ class ContentAdmin(admin.ModelAdmin,):
     list_display = ('id', 'title', 'list_of_categories', 'area',  )
     # exclude = ('like', 'dislike')
     search_fields = ('id', 'title')
-    list_filter = ('categories',)
+    list_filter = ('lang',)
     actions = ["export_as_csv"]
 
     formfield_overrides = {
