@@ -15,10 +15,10 @@ LANGUAGES = (
 )
 
 USER_ACTIONS = (
-    (-1, '-')
-    (0, 'index')
-    (1, 'area')
-    (2, 'content')
+    (-1, '-'),
+    (0, 'index'),
+    (1, 'area'),
+    (2, 'content'),
     (3, 'information')
 )
 
