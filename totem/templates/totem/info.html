@@ -38,14 +38,16 @@ h2 {
 -->
 <style>
 .tab {
-  font-family: Verdana, sans-serif;
+  font-family: Calibri, sans-serif;
   border-collapse: collapse;
-  width: 100%;
+  width: 90%;
+  margin-left:auto;
+  margin-right:auto;
 }
 
 .tab td, #tab th {
   border: 2px solid #ddd;
-  padding: 8px;
+  padding: 20px;
 }
 
 .tab tr:nth-child(even){background-color: #f2f2f2;}
@@ -59,30 +61,45 @@ h2 {
   background-color: rgb(255, 162, 161);
   color: white;
 }
+.titolo{
+  color: red;
+  text-align: center;
+  margin:20px;
+  padding:20px;
+}
 </style>
+
+<div class="titolo">
+
+Informazioni Aggiuntive: <h2> {{ content.area|striptags }}</h2>
+
+</div>
 
 <table class="tab">
    <tr>
-      <th>Informazioni Aggiuntive</th>
-      <th>{{ info_text.area }}</th>
-   </tr>
+
    <tr>
-      <td>Dove==></td>
+      <td>DOVE</td>
+      <td></td>
       <td>{{ info_text.where.title }}</td>
-      <td>{{ info_text.where.tag }}</td>
    </tr>
    <tr>
-      <td>Come==></td>
+      <td>COME</td>
+      <td></td>
       <td>{{ info_text.how }}</td>
    </tr>
    <tr>
-      <td>Quando==></td>
+      <td>QUANDO</td>
+      <td></td>
       <td>{{ info_text.when }}</td>
    </tr>
    <tr>
-      <td>Per chi==></td>
+      <td>PER CHI</td>
+      <td></td>
       <td>{{ info_text.for_who }}</td>
    </tr>
 </table>
+<br><br><br><br>
+      TAG->{{ info_text.where.tag }}
 
 {% endautoescape %}

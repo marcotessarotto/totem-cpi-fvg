@@ -29,7 +29,7 @@
 /* Generic styling */
 
 body{
-	font-family: Verdana; /* calibri e se non dovesse andare sans-serif */
+	font-family: Verdana, sans-serif;
 	font-size: large;
 	background: rgb(255, 255, 255);	
 }
@@ -44,8 +44,8 @@ h1{
 
 .content{
 	width: 100%;
-	max-width: 1142px;
-	/*max-width: 1920px;   ??? provare*/
+	/*max-width: 1142px;
+	max-width: 1920px;*/
 	margin: 0 auto;
 	padding: 0 20px;
 }
@@ -95,10 +95,7 @@ ul a{
 
 
 ul a span{
-	/* prima di aree i <p> altezza del testo nei box
-	top: 50%;
-	*/
-	top: 25%;
+    top: 25%;
 	margin-top: -0.7em;
 	display: block;
 }
@@ -119,6 +116,7 @@ ul a span{
 	float: left;
 	margin-left: 1.751313485113835%;
 	margin-bottom: 60px;
+	text-transform: uppercase
 }
 
 
