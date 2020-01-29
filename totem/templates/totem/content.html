@@ -20,18 +20,19 @@ h2 {
    right:10;
   }
 .button {
-  background-color: rgb(255, 162, 161);
-  border: none;
-  color: white;
+  background-color: #f6f6f6;
+  border: 1px solid rgb(255, 162, 161);
+  color: #333;
   padding: 20px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  margin: 4px 2px;
+  margin: 4px 8px;
   cursor: pointer;
-  border-radius: 25px;
+  border-radius: 10px;
 }
+
 </style>
 
 
@@ -54,11 +55,27 @@ h2 {
       -->
    <ul>
    {% for linked in linked_content %}
-      <li>
-         {{ linked.title }}
-      </li>
+
+         <a href="#" class="ui-btn ui-corner-all ui-shadow">{{ linked.title }}</a><br>
+         <div class="col-md-1">
+            <button type="button" class="btn btn-default">{{ linked.title }}</button>
+         </div>
+
    {% endfor %}
    </ul>
+</div>
+
+<div class="col-md-1">
+<button class="button" >Right</button>
+</div>
+ <div class="col-md-1">
+<button type="button" class="btn btn-default">Right</button>
+</div>
+ <div class="col-md-1" style="clear:left">
+<button type="button" class="btn btn-default">Right</button>
+</div>
+ <div class="col-md-1">
+<button type="button" class="btn btn-default">Right</button>
 </div>
 
 {% endautoescape %}
