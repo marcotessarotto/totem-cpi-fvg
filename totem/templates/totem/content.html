@@ -10,15 +10,11 @@ body {
 h2 {
    text-align: center;
 }
-ul {
+.myul {
     display: inline-flex;
     list-style: none;
     padding: 0;
     /*border: 1px solid #000;*/
-}
-span,li {
-    border: 1px solid rgb(255, 162, 161);
-    background-color: #f6f6f6;
 }
 
 .roundbox {
@@ -28,17 +24,10 @@ span,li {
   padding: 20px;
   margin: 40px;
 }
-.topcorner{
-   padding: 4px;
-   position:absolute;
-   top:10;
-   right:10;
-  }
 
-
-.btn {
+.mybtn {
   background-color: #f6f6f6;
-  border: 1px solid rgb(255, 162, 161);
+  border: 2px solid rgb(255, 162, 161);
   color: #333;
   padding: 20px;
   text-align: center;
@@ -48,6 +37,7 @@ span,li {
   margin: 4px 8px;
   cursor: pointer;
   border-radius: 10px;
+  box-shadow: 2px 4px #888888;
 }
 
 </style>
@@ -55,24 +45,25 @@ span,li {
 
 {% autoescape off %}
 
-<h2> {{ content_text.title }} </h2>
+<ul class="myul">
+<h2> {{ content_text.title | striptags | title }} </h2>
 
 
-<div class="topcorner">
-    <a href="/info/{{content_text.information_id}}/?area_id={{content_text.area_id}}&content_id={{content_text.id}}" class="btn">Informazioni Aggiuntive</a>
-</div>
+
+    <a href="/info/{{content_text.information_id}}/?area_id={{content_text.area_id}}&content_id={{content_text.id}}" class="mybtn">Informazioni Aggiuntive</a>
+
+
+    </ul>
 
 <div class="roundbox">
    {{ content_text.text }}
 </div>
 
 <div>
-   <!--sezione dove se c'è qualche contenuto collegato ne mostra i titoli,
-      da fare link e poi bottone
-      -->
-   <ul>
+
+   <ul class="myul">
    {% for linked in linked_content %}
-            <a href="#" class="btn">{{ linked.title | striptags | title}}</a>
+            <a href="#" class="mybtn">{{ linked.title | striptags | title}}</a>
    {% endfor %}
    </ul>
 </div>
