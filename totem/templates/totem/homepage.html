@@ -18,18 +18,19 @@
 
               <ul class="father cf">
 
-                <li></li>
+                <ul></ul>
                 {% for area in areas %}
-<!--                  es: macro_area num_1 per uso con css, cambiare con enum-->
+
                 <li class="macro_area num_{{ area.id }}">
-<!--                  es: posizionamento scritta, da cambiare nel css-->
-                  <a href="#"><span>{{ area.title }}</span></a>
+
+
+                  <a href="#"><span>{{ area.title | striptags }}</span></a>
                   <ul class="sections">
 
                       {% for content in area.contents %}
                       {% if content.level == 1 %}
 
-                        <li class="section"><a href="content/{{ content.id }}/"><span>{{ content.title }}</span></a></li>
+                        <li class="section"><a href="content/{{ content.id }}/"><span>{{ content.title | striptags }}</span></a></li>
 
                       {% endif %}
                       {% endfor %}

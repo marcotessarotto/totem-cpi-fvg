@@ -29,9 +29,9 @@
 /* Generic styling */
 
 body{
-	font-family: Verdana, sans-serif;
-	font-size: large;
-	background: rgb(255, 255, 255);	
+	font-family: Verdana !important;
+    letter-spacing: 0.050em;
+	background: rgb(255, 255, 255);
 }
 
 
@@ -49,6 +49,7 @@ h1{
 	margin: 0 auto;
 	padding: 0 20px;
 }
+
 
 
 a:focus{
@@ -95,16 +96,14 @@ ul a{
 
 
 ul a span{
-    top: 25%;
+    top: 40%;
 	margin-top: -0.7em;
 	display: block;
 }
 
-
-
 .macro_area:first-child,
 .father li:nth-child(2){
-	margin-left: 0;
+	margin-left: 0px;
 	clear: left;
 }
 
