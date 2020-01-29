@@ -4,14 +4,15 @@
 }
 
 body {
-    margin: 20px;
+    margin: 10px;
     padding-left: 15px;
 }
 h2 {
    text-align: center;
 }
 .myul {
-    display: inline-flex;
+    justify-content: space-between;
+    display: flex;
     list-style: none;
     padding: 0;
     /*border: 1px solid #000;*/
@@ -22,7 +23,7 @@ h2 {
   border-radius: 20px;
   border: 4px solid rgb(255, 162, 161);
   padding: 20px;
-  margin: 40px;
+  margin: 10px;
 }
 
 .mybtn {
@@ -46,14 +47,11 @@ h2 {
 {% autoescape off %}
 
 <ul class="myul">
-<h2> {{ content_text.title | striptags | title }} </h2>
+    <li style="float:left;"><h2> {{ content_text.title | striptags | title }} </h2></li>
 
-
-
-    <a href="/info/{{content_text.information_id}}/?area_id={{content_text.area_id}}&content_id={{content_text.id}}" class="mybtn">Informazioni Aggiuntive</a>
-
-
-    </ul>
+    <li><a href="/info/{{content_text.information_id}}/?area_id={{content_text.area_id}}&content_id={{content_text.id}}" class="mybtn">Informazioni Aggiuntive</a>
+    </li>
+</ul>
 
 <div class="roundbox">
    {{ content_text.text }}
