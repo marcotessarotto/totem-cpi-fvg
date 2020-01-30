@@ -33,6 +33,20 @@
   margin:20px;
   padding:20px;
 }
+
+.tag{
+   float:inline-end;
+   margin-inline-end: 20px;
+}
+.tag a{
+   text-decoration:none;
+   border: 2px solid red;
+   padding: 20;
+   border-radius: 50%;
+}
+a:visited {
+  color: red;
+}
 </style>
 
 <div class="titolo">
@@ -40,32 +54,44 @@
 Informazioni Aggiuntive: <h2> {{ content.area|striptags }}</h2>
 
 </div>
-
+{% load static %}
 <table class="tab">
    <tr>
 
    <tr>
       <td>DOVE</td>
-      <td></td>
-      <td>{{ info_text.where.title }}</td>
+      <td>
+         <img src="{% static "totem/arrow50.png" %}" alt="arrow50"></td>
+      <td>{{ info_text.where.title | striptags }}
+         <div class="tag">
+
+            <a href="{% static "totem/map1.png" %}"> {{ info_text.where.tag }} </a>
+
+
+         </div>
+      </td>
    </tr>
    <tr>
       <td>COME</td>
-      <td></td>
+      <td>
+         <img src="{% static "totem/arrow50.png" %}" alt="arrow50"></td>
+      </td>
       <td>{{ info_text.how }}</td>
    </tr>
    <tr>
       <td>QUANDO</td>
-      <td></td>
+      <td>
+         <img src="{% static "totem/arrow50.png" %}" alt="arrow50"></td>
+      </td>
       <td>{{ info_text.when }}</td>
    </tr>
    <tr>
       <td>PER CHI</td>
-      <td></td>
+      <td>
+         <img src="{% static "totem/arrow50.png" %}" alt="arrow50"></td>
+      </td>
       <td>{{ info_text.for_who }}</td>
    </tr>
 </table>
-<br><br><br><br>
-      TAG->{{ info_text.where.tag }}
 
 {% endautoescape %}
