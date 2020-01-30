@@ -30,8 +30,9 @@
 
 body{
 	font-family: Verdana !important;
-    letter-spacing: 0.050em;
+    letter-spacing: 0.030em;
 	background: rgb(255, 255, 255);
+    padding: 10px;
 }
 
 
