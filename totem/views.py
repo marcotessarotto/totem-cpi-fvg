@@ -32,7 +32,7 @@ def content(request, content_id):
     ua.session_id = request.session.session_key
     ua.save()
 
-    #content_text = Content.objects.all()
+    # content_text = Content.objects.all()
     content_text = get_object_or_404(Content, id=content_id)
     # content_text = Content.objects.get(pk=content_id)
     linked_content = Content.objects.filter(linked_contents__id=content_id)
@@ -56,6 +56,10 @@ def info(request, info_id):
     context = {'info_text': info_text, 'content': content_instance}
 
     return render(request, 'totem/info.html', context)
+
+
+def mappa(request):
+    return render(request, 'totem/map.html', {})
 
 
 class IndexView(generic.View):
