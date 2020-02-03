@@ -1,5 +1,9 @@
 {% load static %}
 <style>
+*{
+   text-align: center;
+
+}
 .myul {
     justify-content: space-between;
     display: flex;
@@ -9,19 +13,20 @@
 }
 
 .mybtn {
-  background-color: #f6f6f6;
-  border: 2px solid black;
-  color: #333;
-  padding: 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 8px;
-  cursor: pointer;
-  border-radius: 10px;
-  box-shadow: 2px 4px #888888;
+   background-color: #f6f6f6;
+   border: 2px solid black;
+   color: #333;
+   padding: 20px;
+   text-align: center;
+   text-decoration: none;
+   display: inline-block;
+   font-size: 16px;
+   margin: 4px 8px;
+   cursor: pointer;
+   border-radius: 10px;
+   box-shadow: 2px 4px #888888;
 }
+
 </style>
 <div>
     <img src="{% static 'totem/map1.png' %}" alt="mappa">
@@ -30,8 +35,6 @@
 
 <div>
    <ul class="myul">
-      <li><a href="#" class="mybtn">BACK</a></li>
-      <li><a href="#" class="mybtn">HOME</a></li>
-      <li><a href="/map" class="mybtn">MAP</a></li>
+      <li style="margin-left:50%; margin-right:50%;"><a href="{% url 'totem:index' %}" class="mybtn">HOME</a></li>
    </ul>
 </div>

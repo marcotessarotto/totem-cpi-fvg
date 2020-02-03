@@ -96,7 +96,7 @@ a:visited {
          <img src="{% static "totem/arrow50.png" %}" alt="arrow50"></td>
       <td>{{ info_text.where.title | striptags }}
          <div class="tag">
-            <a href="{% static "totem/map1.png" %}"> {{ info_text.where.tag }} </a>
+            <a href="{% url 'totem:map' %}"> {{ info_text.where.tag }} </a>
          </div>
       </td>
    </tr>
@@ -125,9 +125,9 @@ a:visited {
 
 <div>
    <ul class="myul">
-      <li><a href="#" class="mybtn">BACK</a></li>
-      <li><a href="#" class="mybtn">HOME</a></li>
-      <li><a href="#" class="mybtn">MAP</a></li>
+      <li><a href="{% url 'totem:content'  content.id %}" class="mybtn">BACK</a></li>
+      <li><a href="{% url 'totem:index' %}" class="mybtn">HOME</a></li>
+      <li><a href="{% url 'totem:map' %}" class="mybtn">MAP</a></li>
    </ul>
 </div>
 

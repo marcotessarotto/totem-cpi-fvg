@@ -66,15 +66,15 @@ h2 {
 
    <ul class="myul">
    {% for linked in linked_content %}
-            <a href="#" class="mybtn">{{ linked.title | striptags | title}}</a>
+            <a href="{% url 'totem:content' linked.id %}" class="mybtn">{{ linked.title | striptags | title}}</a>
    {% endfor %}
    </ul>
 </div>
 
 <div>
    <ul class="myul">
-      <li><a href="#" class="mybtn">BACK</a></li>
-      <li><a href="#" class="mybtn">HOME</a></li>
+      <li><a href="{% url 'totem:index' %}" class="mybtn">BACK</a></li>
+      <li><a href="{% url 'totem:index' %}" class="mybtn">HOME</a></li>
       <li><a href="/map" class="mybtn">MAP</a></li>
    </ul>
 </div>
