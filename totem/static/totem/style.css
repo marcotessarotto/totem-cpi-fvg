@@ -38,8 +38,8 @@ body{
 
 /* Colore e testo Titolo*/
 h1{
-	text-align:center;
-	color:rgb(154,58,58);
+	text-align: center;
+	color: rgb(154,58,58);
 }
 
 
@@ -213,12 +213,27 @@ ul a span{
 .macro_area.num_5 a{ background: rgb(255, 190, 134); }
 .macro_area.num_6 a{ background: rgb(255, 190, 134); }
 
-.mappa{
-    margin: 50%;
-    padding: 20px 66px;
-    border: 2px solid black;
-    text-align: center;
-    background-color: #9a3a3a;
-    color:white;
-    text-decoration: none;
+
+.myul {
+    justify-content: space-between;
+    display: flex;
+    list-style: none;
+    padding: 15px;
+    /*border: 1px solid #000;*/
+}
+
+.mybtn {
+  background-color: #f6f6f6;
+  border: 2px solid rgb(154,58,58);;
+  color: rgb(154,58,58);;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 8px;
+  cursor: pointer;
+  border-radius: 10px;
+  box-shadow: box-shadow: 24px 4px 9px -4px rgba(0,0,0,0.4);
+
 }
