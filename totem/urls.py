@@ -9,7 +9,8 @@ urlpatterns = [
 
     path('content/<int:content_id>/', views.content, name='content'),
     path('info/<int:info_id>/', views.info, name='info'),
-    #path('<int:content_id>/content/<int:info_id>/info', views.info, name='info'),
+    # path('<int:content_id>/content/<int:info_id>/info', views.info, name='info'),
 
     path('map', views.mappa, name='map'),
+    path('prova', views.prova, name='prova'),
 ]
