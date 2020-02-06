@@ -7,20 +7,6 @@ from django.views import generic
 from .models import Area, Content, UserAction, Informations
 
 
-# def index(request):
-#     area_list = Area.objects.order_by('-area_name')[:5]
-#     context = {'area_list': area_list}
-#     return render(request, 'totem/prova.html', context)
-#     #area_list = Area.objects.order_by('-area_name')[:5]
-#     #output = ', '.join([q.area_name for q in area_list])
-#     #return HttpResponse(output)
-#
-#
-# def area(request, area_id):
-#     title = Content.objects.get(pk=area_id)
-#     #print(title)
-#     return HttpResponse("Stai vedendo MACROAREA %s." % title)
-#
 def content(request, content_id):
     if not request.session.session_key:
         request.session.create()
@@ -53,7 +39,8 @@ def info(request, info_id):
     info_text = get_object_or_404(Informations, id=info_id)
     content_instance = get_object_or_404(Content, id=content_id)
 
-    context = {'info_text': info_text, 'content': content_instance}
+    context = {'info_text': info_text,
+               'content': content_instance}
 
     return render(request, 'totem/info.html', context)
 
