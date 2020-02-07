@@ -129,7 +129,7 @@ dmypy.json
 .pyre/
 
 secrets.py
-
+cpi_fvg/secrets.fvg
 
 migrations/
 
