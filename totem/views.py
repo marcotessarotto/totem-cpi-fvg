@@ -33,8 +33,8 @@ def info(request, info_id):
     area_id = request.GET.get('area_id', '-')
     content_id = request.GET.get('content_id', '-')
 
-    print(area_id)
-    print(content_id)
+    # print(area_id)
+    # print(content_id)
 
     info_text = get_object_or_404(Informations, id=info_id)
     content_instance = get_object_or_404(Content, id=content_id)

@@ -94,7 +94,8 @@ a:visited {
    <tr>
       <td>DOVE</td>
       <td style="border:0;">
-         <img src="{% static "totem/arrow50.png" %}" alt="arrow50"></td>
+         <img src="{% static "totem/arrow50.png" %}" alt="arrow50">
+      </td>
       <td>{{ info_text.where.title | striptags }}
          <div class="tag">
             <a href="{% url 'totem:map' %}"> {{ info_text.where.tag }} </a>
@@ -104,21 +105,21 @@ a:visited {
    <tr>
       <td>COME</td>
       <td style="border:0;">
-         <img src="{% static "totem/arrow50.png" %}" alt="arrow50"></td>
+         <img src="{% static "totem/arrow50.png" %}" alt="arrow50">
       </td>
       <td>{{ info_text.how }}</td>
    </tr>
    <tr>
       <td>QUANDO</td>
       <td style="border:0;">
-         <img src="{% static "totem/arrow50.png" %}" alt="arrow50"></td>
+         <img src="{% static "totem/arrow50.png" %}" alt="arrow50">
       </td>
       <td>{{ info_text.when }}</td>
    </tr>
    <tr>
       <td>PER CHI</td>
       <td style="border:0;">
-         <img src="{% static "totem/arrow50.png" %}" alt="arrow50"></td>
+         <img src="{% static "totem/arrow50.png" %}" alt="arrow50">
       </td>
       <td>{{ info_text.for_who }}</td>
    </tr>
@@ -135,35 +136,4 @@ a:visited {
 
 {% endautoescape %}
 
-<!--https://stackoverflow.com/questions/7071472/javascript-timeout-when-no-actions-from-user-for-specified-time-->
-<script>
-    attachEvent(window,'load',function(){
-
-      var idleSeconds = 10;
-
-      var idleTimer;
-      function resetTimer(){
-        clearTimeout(idleTimer);
-        idleTimer = setTimeout(whenUserIdle,idleSeconds*1000);
-      }
-      attachEvent(document.body,'mousemove',resetTimer);
-      attachEvent(document.body,'keydown',resetTimer);
-      attachEvent(document.body,'click',resetTimer);
-
-      resetTimer(); // Start the timer when the page loads
-    });
-
-    function whenUserIdle(){
-      //...CAMBIARE QUI, SPOSTARE SCRIPT SU ALTRE PAGINE E RIMANDARE A HOMEPAGE
-      window.location.href = "../../";
-    }
-
-    function attachEvent(obj,evt,fnc,useCapture){
-      if (obj.addEventListener){
-        obj.addEventListener(evt,fnc,!!useCapture);
-        return true;
-      } else if (obj.attachEvent){
-        return obj.attachEvent("on"+evt,fnc);
-      }
-    }
-</script>
+<script src="{% static "totem/timeout.js" %}"></script>

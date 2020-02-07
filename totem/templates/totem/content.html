@@ -1,3 +1,5 @@
+{% load static %}
+
 <style>
 *{
     font-family: Verdana !important;
@@ -54,7 +56,6 @@ h2 {
 <div>
 <ul class="myul">
     <li style="float:left;"><h2> {{ content_text.title | striptags | title }} </h2></li>
-
     <li><a href="/info/{{content_text.information_id}}/?area_id={{content_text.area_id}}&content_id={{content_text.id}}" class="mybtn">Informazioni Aggiuntive</a>
     </li>
 </ul>
@@ -83,36 +84,5 @@ h2 {
 
 {% endautoescape %}
 
-<!--https://stackoverflow.com/questions/7071472/javascript-timeout-when-no-actions-from-user-for-specified-time-->
-<script>
-    attachEvent(window,'load',function(){
 
-      var idleSeconds = 10;
-
-      var idleTimer;
-      function resetTimer(){
-        clearTimeout(idleTimer);
-        idleTimer = setTimeout(whenUserIdle,idleSeconds*1000);
-      }
-      attachEvent(document.body,'mousemove',resetTimer);
-      attachEvent(document.body,'keydown',resetTimer);
-      attachEvent(document.body,'click',resetTimer);
-
-      resetTimer(); // Start the timer when the page loads
-    });
-
-    function whenUserIdle(){
-      //...CAMBIARE QUI, SPOSTARE SCRIPT SU ALTRE PAGINE E RIMANDARE A HOMEPAGE
-      window.location.href = "../../";
-    }
-
-    function attachEvent(obj,evt,fnc,useCapture){
-      if (obj.addEventListener){
-        obj.addEventListener(evt,fnc,!!useCapture);
-        return true;
-      } else if (obj.attachEvent){
-        return obj.attachEvent("on"+evt,fnc);
-      }
-    }
-</script>
-
+<script src="{% static "totem/timeout.js" %}"></script>
