@@ -29,7 +29,7 @@
 /* Generic styling */
 
 body{
-	font-family: Verdana !important;
+	font-family: Calibri !important;
     letter-spacing: 0.030em;
 	background: rgb(255, 255, 255);
     padding: 10px;
@@ -75,8 +75,9 @@ ul a{
     /* bordo delle box, spessore */
 	border: 2px solid black;
 	text-align: center;
+
 	overflow: hidden;
-	font-size: .7em;
+	font-size: 1.2em;
 	text-decoration: none;
     font-weight: bold;
     /* scritta */
@@ -99,8 +100,8 @@ ul a{
 
 
 ul a span{
-    top: 40%;
-	margin-top: -0.7em;
+    top: 50%;
+	margin-top: -1em;
 	display: block;
 }
 
@@ -160,10 +161,10 @@ ul a span{
 }
 
 /* HOVER DELLA MACRO AREA*/
-.macro_area > a:hover{
+/*.macro_area > a:hover{
 	height: 80px;
 }
-
+*/
 
 .macro_area > ul{
 	margin-top: 0px;
@@ -184,11 +185,12 @@ ul a span{
 	position: absolute;
 	z-index: 1;
 	width: 90%; /*larghezza rispetto a macroarea*/
-	height: 60px;
+	height: 78px;
 	vertical-align: middle;
 	right: -1px;
 }
 
+/*
 .macro_area li a:hover{
 	box-shadow: 8px 8px 9px -4px rgba(0,0,0,0.1);
 	height: 80px;
@@ -196,7 +198,7 @@ ul a span{
 	top: 39px;
 	background-image: none!important;
 }
-
+*/
 
 /* Macro_area/Content section colors */
 
