@@ -84,9 +84,11 @@ ul a{
 	height: 70px;
     margin-bottom: -26px;
    	box-shadow: 4px 4px 9px -4px rgba(0,0,0,0.4);
+   	/*
 	-webkit-transition: all linear .1s;
 	-moz-transition: all linear .1s;
 	transition: all linear .1s;
+	*/
 }
 
 @media screen and (max-width: 767px){
