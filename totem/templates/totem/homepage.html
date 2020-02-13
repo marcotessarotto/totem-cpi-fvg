@@ -24,7 +24,7 @@
                       {% for content in area.contents %}
                       {% if content.level == 1 %}
 
-                        <li class="section"><a href="content/{{ content.id }}/"><span>{{ content.title | striptags }}</span></a></li>
+                        <li class="section"><a style="background-color: white;" href="content/{{ content.id }}/"><span>{{ content.title | striptags }}</span></a></li>
 
                       {% endif %}
                       {% endfor %}
