@@ -71,7 +71,7 @@ ul{
 
 ul a{
 	display: block;
-    background: #ccc;
+    background: white;
     /* bordo delle box, spessore */
 	border: 2px solid black;
 	text-align: center;
