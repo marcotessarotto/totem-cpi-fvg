@@ -82,7 +82,7 @@ ul a{
     font-weight: bold;
     /* scritta */
 	color: #333;
-	height: 70px;
+	height: 80px;
     margin-bottom: -26px;
    	box-shadow: 4px 4px 9px -4px rgba(0,0,0,0.4);
    	/*
@@ -100,8 +100,8 @@ ul a{
 
 
 ul a span{
-    top: 50%;
-	margin-top: -1em;
+    top: 15%;
+	margin-top: 0.5em;
 	display: block;
 }
 
@@ -175,7 +175,7 @@ ul a span{
 	padding-left: 25px;
 	/*trattino di collegamento dei content / li */
     border-bottom: 4px solid rgb(192, 80, 77);
-	height: 80px;
+	height: 100px;
 }
 
 
@@ -185,7 +185,7 @@ ul a span{
 	position: absolute;
 	z-index: 1;
 	width: 90%; /*larghezza rispetto a macroarea*/
-	height: 78px;
+	height: 95px;
 	vertical-align: middle;
 	right: -1px;
 }
