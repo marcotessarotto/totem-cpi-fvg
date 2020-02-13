@@ -4,7 +4,7 @@
 
 attachEvent(window,'load',function(){
 
-      var idleSeconds = 30;
+      var idleSeconds = 120;
 
       var idleTimer;
       function resetTimer(){
