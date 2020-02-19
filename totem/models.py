@@ -53,6 +53,9 @@ class FileItem(models.Model):
 class Office(models.Model):
     title = RichTextField(max_length=1024, verbose_name="nome dell'ufficio")
 
+    class Meta:
+        verbose_name = 'Ufficio'
+        verbose_name_plural = 'Uffici'
     def __str__(self):
         return "Office " + str(self.id) + ' (' + \
                str(self.title) + ') '
