@@ -37,7 +37,7 @@
    color: white;
 }
 .titolo{
-   color: red;
+   color: {% if content.area.color %} {{ content.area.color }}; {% endif %}
    text-align: center;
    padding-top: 20px;
 }

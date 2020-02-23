@@ -43,7 +43,6 @@ class AreaAdmin(admin.ModelAdmin,):
 
         from django.http import HttpResponseRedirect
         return HttpResponseRedirect("../")
-
     add_default_areas.short_description = "Aggiungi le aree di default"
 
     change_list_template = "areas/areas_changelist.html"
